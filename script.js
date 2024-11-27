@@ -6,12 +6,19 @@ yesButton.addEventListener('click', function(e){
 });
 
 function moveNoButton(){
-    let x = Math.random();
-    let y = Math.random();
+        let x = Math.random();
+        let y = Math.random();
+        
+        const buttonWidth = noButton.offsetWidth;
+        const buttonHeight = noButton.offsetHeight;
     
-    noButton.style.position = 'absolute';
-    noButton.style.left = `${(window.innerWidth - noButton.offsetWidth) * x}px`
-    noButton.style.top = `${(window.innerHeight - noButton.offsetHeight) * y}px`
+        const maxX = window.innerWidth - buttonWidth;
+        const maxY = window.innerHeight - buttonHeight;
+    
+        noButton.style.position = 'absolute';
+        noButton.style.left = `${maxX * x}px`; 
+        noButton.style.top = `${maxY * y}px`;  
+    
 }
 
 noButton.addEventListener('mouseover', moveNoButton);
